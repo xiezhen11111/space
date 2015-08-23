@@ -54,7 +54,7 @@ protected:
 
 	void testBox2D();   //测试Box2D环境
 
-	void playTapped(cocos2d::Ref* pSender);
+	void playTapped(cocos2d::Ref* pSender);//开始游戏
 
 	void removeNode(cocos2d::Node* sender);
 	void invisNode(cocos2d::Node* sender); //使节点隐藏

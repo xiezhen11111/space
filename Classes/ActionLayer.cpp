@@ -132,7 +132,7 @@ void ActionLayer::playTapped(cocos2d::Ref* pSender)
 {
 	SimpleAudioEngine::getInstance()->playEffect("Sounds/powerup.caf");
 
-	//让每个结点标题都消失再从场景上删除
+	//让每个结点标题都消失再从场景上删除（使用for循环避免重复写代码）
 	Vector<Node*> nodes;
 	nodes.pushBack(_titleLabel1);
 	nodes.pushBack(_titleLabel2);
@@ -142,6 +142,7 @@ void ActionLayer::playTapped(cocos2d::Ref* pSender)
 		node->runAction(Sequence::create(EaseOut::create(ScaleTo::create(0.5f, 0.f), 4.f),
 			CallFuncN::create(CC_CALLBACK_1(ActionLayer::removeNode, this)), NULL));
 	}
+
 	//开出飞机
 	this->spawnShip();
 
@@ -513,6 +514,14 @@ void ActionLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event)
 
 void ActionLayer::updateAsteroids(float dt)
 {
+	/*
+	小行星的创建策略
+	1.设置创建行星的时间间隔（变化的）
+	2.放置的右侧屏幕外，在顶部和底部随机一个y坐标
+	3.设置一个随机的速度，从右侧移动到左侧
+	4.设置不同的大小
+	*/
+	
 	//if(_gameStage != GameStageAsteroids) return;  
 	if(_levelManager->_gameState != GameStateNormal) return; //不在游戏状态时直接返回
 	if(!_levelManager->boolForProp("SpawnAsteroids")) return; //当前阶段不是生成小行星带阶段，也返回,有的关卡是boss战，有的是小飞机
@@ -536,6 +545,7 @@ void ActionLayer::updateAsteroids(float dt)
 		float moveDurationLow = _levelManager->floatForProp("AMoveDurationLow");  //飞行时间最短的时间
 		float moveDurationHigh = _levelManager->floatForProp("AMoveDurationHigh"); //飞行时间最长的时间
 		float randDuration = Common::randomValueBetween(moveDurationLow, moveDurationHigh);
+
 		//产生一个小行星
 		GameObject *asteroid = _asteroidsArray->nextSprite();
 		asteroid->stopAllActions();
