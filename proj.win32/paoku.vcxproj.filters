@@ -15,10 +15,40 @@
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ActionLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\BossShip.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GLES-Render.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ParallaxNodeExtras.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ParticleSystemArray.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShapeCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpriteArray.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,10 +56,43 @@
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\ActionLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\BossShip.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameObject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GLES-Render.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ParallaxNodeExtras.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ParticleSystemArray.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShapeCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SimpleContactListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpriteArray.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

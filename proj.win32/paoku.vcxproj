@@ -140,13 +140,34 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\ActionLayer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\BossShip.cpp" />
+    <ClCompile Include="..\Classes\Common.cpp" />
+    <ClCompile Include="..\Classes\GameObject.cpp" />
+    <ClCompile Include="..\Classes\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\LevelManager.cpp" />
+    <ClCompile Include="..\Classes\ParallaxNodeExtras.cpp" />
+    <ClCompile Include="..\Classes\ParticleSystemArray.cpp" />
+    <ClCompile Include="..\Classes\ShapeCache.cpp" />
+    <ClCompile Include="..\Classes\SpriteArray.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\ActionLayer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\BossShip.h" />
+    <ClInclude Include="..\Classes\Common.h" />
+    <ClInclude Include="..\Classes\GameObject.h" />
+    <ClInclude Include="..\Classes\GLES-Render.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\LevelManager.h" />
+    <ClInclude Include="..\Classes\ParallaxNodeExtras.h" />
+    <ClInclude Include="..\Classes\ParticleSystemArray.h" />
+    <ClInclude Include="..\Classes\ShapeCache.h" />
+    <ClInclude Include="..\Classes\SimpleContactListener.h" />
+    <ClInclude Include="..\Classes\SpriteArray.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
