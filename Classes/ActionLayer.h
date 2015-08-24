@@ -76,7 +76,7 @@ protected:
 	void updateLasers(float dt); //更新激光
 	void updateCollisions(float dt);  //更新碰撞
 	void updateBackground(float dt); //更新背景滚动
-	void updateBox2D(float dt); //更新Box2D世界
+	void updateBox2D(float dt); //更新Box2D世界（尽管你可以使用cocos2d来更新box2d对象坐标，但是box2d还是需要时间去处理碰撞检测）
 	void updateLevel(float dt); //更新关卡
 	void updateAlienSwarm(float dt); //更新外星敌机群
 	void updatePowerups(float dt);  //更新补品

@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-#define PTM_RATIO 50  //这个数值是试出来的，越大包围盒就越大，越小包围盒越小
+#define PTM_RATIO 50  //这个数值是试出来的，越大包围盒就越大，越小包围盒越小（用于转换box2d与cocos2d的坐标）
 class Common
 {
 public:

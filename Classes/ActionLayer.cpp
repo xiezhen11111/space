@@ -82,7 +82,7 @@ void ActionLayer::setupTitle()
 void ActionLayer::setupWorld()
 {
 	b2Vec2 gravity = b2Vec2(0.f, 0.f);
-	_world = new b2World(gravity);  //这个Box2D world暂时没有重力
+	_world = new b2World(gravity);  //这个Box2D world暂时没有重力（只有自己可以移动，并不需要外部去移动物体）
 
 	_contactListener = new SimpleContactListener(this);
 	_world->SetContactListener(_contactListener);  //设置碰撞监听
@@ -112,7 +112,7 @@ void ActionLayer::testBox2D()
 	Size winSize = Director::getInstance()->getWinSize();
 
 	b2BodyDef bodyDef;  //创建一个物体定义
-	bodyDef.type = b2_dynamicBody; //此物体是动态的
+	bodyDef.type = b2_dynamicBody; //此物体是动态的（可以移动，静态物体是不可以移动的）
 	bodyDef.position = b2Vec2(winSize.width/2/PTM_RATIO,
 							  winSize.height/2/PTM_RATIO);
 	b2Body *body = _world->CreateBody(&bodyDef); //根据此物体定义创建一个物体
@@ -263,7 +263,7 @@ void ActionLayer::setupBackground()
 {
 	Size winSize = Director::getInstance()->getWinSize();
 
-	//1 创建一个多层结点ParallaxNode
+	//1 创建一个多层结点ParallaxNode（在updateBackground:中将只滚动_backgroundNode）
 	_backgroundNode = ParallaxNodeExtras::node();
 	this->addChild(_backgroundNode, -2);
 
@@ -333,6 +333,7 @@ bool ActionLayer::init()
 	_boostEffects = nullptr;
 	_cannonBalls = nullptr;
 
+	//先执行这些方法，确保box2d先执行
 	this->setupWorld();
 	this->setupDebugDraw();
 	//this->testBox2D();
@@ -924,6 +925,7 @@ void ActionLayer::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags
 	kmGLPushMatrix();
 	_world->DrawDebugData();
 	kmGLPopMatrix();
+
 	//如果是敌机产生阶段
 	if (_levelManager->_gameState == GameStateNormal && _levelManager->boolForProp("SpawnAlienSwarm"))
 	{
